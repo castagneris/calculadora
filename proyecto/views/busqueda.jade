@@ -1,0 +1,5 @@
+extends ./layout.jade
+block contenido
+  form(action="/sesioncalculo", method="POST")
+    input(type="text", name="nombreSesion", placeholder="Nombre Sesion", id="nombreSesion")
+    input(type="submit", value="Buscar Calculo")

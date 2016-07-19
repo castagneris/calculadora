@@ -1,0 +1,124 @@
+extends ./layout.jade
+block contenido
+  form(action="/calculo", method="POST")
+    div
+    input(type='button', value='8', onclick='ocho()')
+    input(type='button', value='9', onclick='nueve()')
+    input(type='button', value='(', onclick='parenI()')
+    input(type='button', value=')', onclick='parenD()')
+    input(type='button', value='C', onclick='borrar()')
+    input(type='button', value='CA', onclick='borrarTodo()')
+    br
+    input(type='button', value='4', onclick='cuatro()')
+    input(type='button', value='5', onclick='cinco()')
+    input(type='button', value='6', onclick='seis()')
+    input(type='button', value='7', onclick='siete()')
+    input(type='button', value='+', onclick='suma()')
+    input(type='button', value='-', onclick='resta()')
+    br
+    input(type='button', value='0', onclick='cero()')
+    input(type='button', value='1', onclick='uno()')
+    input(type='button', value='2', onclick='dos()')
+    input(type='button', value='3', onclick='tres()')
+    input(type='button', value='*', onclick='mult()')
+    input(type='button', value='/', onclick='div()')
+    div
+      input(type="text", name="expresion", placeholder="Expresion a calc", id="expresion", readonly="readonly", required)
+      input(type='button', value='=', onclick='calcular()')
+      input(type="text", name="resultado", placeholder="Resultado", id="resultado", readonly="readonly")
+      div
+        input(type="text", name="nombreSesion", placeholder="Nombre Sesion", id="nombreSesion")
+        input(type="submit", value="Guardar Calculo")
+  script.
+      var calcular = function(){
+      document.getElementById("resultado").value = eval((document.getElementById("expresion").value));
+      }
+
+      var cero = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"0";
+      }
+
+      var uno = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"1";
+      }
+
+      var dos = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"2";
+      }
+
+      var tres = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"3";
+      }
+
+      var cuatro = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"4";
+      }
+
+      var cinco = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"5";
+      }
+
+      var seis = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"6";
+      }
+
+      var siete = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"7";
+      }
+
+      var ocho = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"8";
+      }
+
+      var nueve = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"9";
+      }
+
+      var suma = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"+";
+      }
+
+      var resta = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"-";
+      }
+
+      var div = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"/";
+      }
+
+      var mult = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"*";
+      }
+
+      var parenD = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+")";
+      }
+
+      var parenI = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul+"(";
+      }
+
+      var borrarTodo = function(){
+      document.getElementById("expresion").value ="";
+      }
+
+      var borrar = function(){
+      var resul = document.getElementById("expresion").value;
+      document.getElementById("expresion").value = resul.substr(0, resul.length-1);
+      }
