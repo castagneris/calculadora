@@ -1,4 +1,4 @@
-Herramietas usadas en el package dependecias, su uso es bastante intuitivo, perdonen por la desprolijidad me costo 
-entender todas las herramientas ya que no conocia ninguna, me falto unas validaciones en la parte de calculo,
- ya que guarda calculos incorrectos, la clase principal es la app.js.
-Saludos
+Calculadora simple que trata de cumplir todas las funcionalidades de la actividad pedida, falta de chequear los inputs de la parte calculadora, ya que podemos guardar expresiones no correctas.
+Utilize las herramientas node.js, express, mongodb.
+La clase principal es app.js.
+Saludos.
